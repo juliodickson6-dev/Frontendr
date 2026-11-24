@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=5, user-scalable=yes">
+    <meta name="description" content="Ficha de Cadastro - Associação dos Jovens Voluntários (AJOV)">
+    <meta name="theme-color" content="#0d8b5e">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="shortcut icon" href="images/AJOV.png" type="image/x-icon">
+    <title>Ficha de Cadastro - AJOV</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/config.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo-wrapper">
+                <div class="logo-img">
+                    <img src="images/AJOV.png" alt="Logo AJOV">
+                </div>
+                <div class="header-text">
+                    <h1>FICHA DE CADASTRO</h1>
+                    <p>Associação dos Jovens Voluntários (AJOV)</p>
+                </div>
+            </div>
+        </div>
+
+        <form id="cadastroForm">
+            <!-- Progress Bar -->
+            <div class="form-card">
+                <div class="progress-bar">
+                    <span class="progress-text" id="progressText">0%</span>
+                    <div class="progress-track">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DADOS PESSOAIS -->
+            <div class="form-card">
+                <div class="section-header">
+                    <i class="fas fa-user"></i>
+                    DADOS PESSOAIS
+                </div>
+                <div class="section-body">
+                    <div class="form-row">
+                        <div class="form-group full-width">
+                            <label for="nomeCompleto">Nome Completo <span class="required">*</span></label>
+                            <input type="text" id="nomeCompleto" name="nomeCompleto" placeholder="Exemplo: Dickson da Silva" required>
+                            <span class="error-msg">Por favor, insira seu nome completo.</span>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="nomePai">Nome do Pai</label>
+                            <input type="text" id="nomePai" name="nomePai" placeholder="Nome do pai">
+                        </div>
+                        <div class="form-group">
+                            <label for="nomeMae">Nome da Mãe <span class="required">*</span></label>
+                            <input type="text" id="nomeMae" name="nomeMae" placeholder="Nome da mãe" required>
+                            <span class="error-msg">Por favor, insira o nome da mãe.</span>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="dataNascimento">Data de Nascimento <span class="required">*</span></label>
+                            <input type="date" id="dataNascimento" name="dataNascimento" required>
+                            <span class="error-msg">Por favor, selecione a data de nascimento.</span>
+                        </div>
+                        <div class="form-group">
+                            <label>Sexo <span class="required">*</span></label>
+                            <div class="radio-group">
+                                <label class="radio-option">
+                                    <input type="radio" name="sexo" value="masculino" required>
+                                    <span>Masculino</span>
+                                </label>
+                                <label class="radio-option">
+                                    <input type="radio" name="sexo" value="feminino" required>
+                                    <span>Feminino</span>
+                                </label>
+                            </div>
+                            <span class="error-msg">Por favor, selecione o sexo.</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="estadoCivil">Estado Civil <span class="required">*</span></label>
+                            <select id="estadoCivil" name="estadoCivil" required>
+                                <option value="">Selecione...</option>
+                                <option value="solteiro">Solteiro(a)</option>
+                                <option value="casado">Casado(a)</option>
+                                
+                                
+                            </select>
+                            <span class="error-msg">Por favor, selecione o estado civil.</span>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="nacionalidade">Nacionalidade <span class="required">*</span></label>
+                            <input type="text" id="nacionalidade" name="nacionalidade" value="Moçambicana" required>
+                            <span class="error-msg">Por favor, insira a nacionalidade.</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="naturalidade">Naturalidade <span class="required">*</span></label>
+                            <input type="text" id="naturalidade" name="naturalidade" placeholder="Cidade/Província de nascimento" required>
+                            <span class="error-msg">Por favor, insira a naturalidade.</span>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="formacao">Formação</label>
+                            <input type="text" id="formacao" name="formacao" placeholder="Nível de formação académica">
+                            
+                        </div>
+                        <div class="form-group">
+                            <label for="profissao">Profissão</label>
+                            <input type="text" id="profissao" name="profissao" placeholder="Sua profissão">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DOCUMENTOS PESSOAIS -->
+            <div class="form-card">
+                <div class="section-header">
+                    <i class="fas fa-id-card"></i>
+                    DOCUMENTOS PESSOAIS
+                </div>
+                <div class="section-body">
+                    <div class="docs-grid">
+                        <div class="doc-item">
+                            <input type="checkbox" id="bilhete" name="documentos" value="bilhete">
+                            <label for="bilhete">Bilhete de Identidade</label>
+                        </div>
+                        <div class="doc-item">
+                            <input type="checkbox" id="passaporte" name="documentos" value="passaporte">
+                            <label for="passaporte">Passaporte</label>
+                        </div>
+                        <div class="doc-item">
+                            <input type="checkbox" id="cPessoal" name="documentos" value="cPessoal">
+                            <label for="cPessoal">C. Pessoal</label>
+                        </div>
+                    </div>
+                    <div class="form-row" style="margin-top: 20px;">
+                        <div class="form-group">
+                            <label for="numeroIdentificacao">Número de Identificação <span class="required">*</span></label>
+                            <input type="text" id="numeroIdentificacao" name="numeroIdentificacao" placeholder="Nº do BI/Passaporte/DIRE" required>
+                            <span class="error-msg">Por favor, insira o número de identificação.</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="validadeAte">Válido Até</label>
+                            <input type="date" id="validadeAte" name="validadeAte">
+                            <span class="input-hint">Data de validade do documento</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ENDEREÇO PESSOAL -->
+            <div class="form-card">
+                <div class="section-header">
+                    <i class="fas fa-map-marker-alt"></i>
+                    ENDEREÇO PESSOAL
+                </div>
+                <div class="section-body">
+                    <div class="notice-box">
+                        <i class="fas fa-info-circle"></i>
+                        <strong>Obs:</strong> Caso more com os pais ou não tenha ainda endereço fixo em Nampula ou outros distritos, coloque o endereço dos encarregados.
+                    </div>
+                    <div class="notice-box alert">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <strong>Atenção:</strong> Só preencha se puder; não é obrigatório mas sim para em casos de emergências.
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="ruaAvenida">Rua/Avenida</label>
+                            <input type="text" id="ruaAvenida" name="ruaAvenida" placeholder="Nome da rua ou avenida">
+                        </div>
+                        <div class="form-group">
+                            <label for="quarteirao">Quarteirão</label>
+                            <input type="text" id="quarteirao" name="quarteirao" placeholder="Nº do quarteirão">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="bairro">Bairro</label>
+                            <input type="text" id="bairro" name="bairro" placeholder="Nome do bairro">
+                        </div>
+                        <div class="form-group">
+                            <label for="celular">Celular <span class="required">*</span></label>
+                            <input type="tel" id="celular" name="celular" placeholder="+258 84 000 0000" required>
+                            <span class="error-msg">Por favor, insira um número de celular válido.</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">E-mail</label>
+                            <input type="email" id="email" name="email" placeholder="seu@email.com">
+                            <span class="error-msg">Por favor, insira um e-mail válido.</span>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="localServico">Local de Serviço</label>
+                            <input type="text" id="localServico" name="localServico" placeholder="Onde trabalha/estuda">
+                        </div>
+                        <div class="form-group">
+                            <label for="grauParentesco">Grau de Parentesco</label>
+                            <input type="text" id="grauParentesco" name="grauParentesco" placeholder="Relação com o contacto de emergência">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MOTIVAÇÃO -->
+            <div class="form-card">
+                <div class="section-header">
+                    <i class="fas fa-heart"></i>
+                    MOTIVAÇÃO
+                </div>
+                <div class="section-body">
+                    <div class="form-group full-width">
+                        <label for="motivacao">Por que quer fazer parte da AJOV? <span class="required">*</span></label>
+                        <textarea id="motivacao" name="motivacao" placeholder="Descreva suas motivações para se juntar à Associação dos Jovens Voluntários..." required></textarea>
+                        <span class="error-msg">Por favor, descreva sua motivação.</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DECLARAÇÃO -->
+            <div class="form-card">
+                <div class="section-header">
+                    <i class="fas fa-file-signature"></i>
+                    DECLARAÇÃO
+                </div>
+                <div class="section-body">
+                    <p style="margin-bottom: 15px; font-weight: 600; color: var(--primary);">Declaro:</p>
+                    <ol class="declaration-list">
+                        <li>
+                            <span class="decl-text">
+                                Interesse por minha livre vontade que: <strong>Solicito a minha adesão</strong> como membro da <strong>Associação</strong> dos Jovens Voluntários (AJOV)
+                            </span>
+                        </li>
+                        <li>
+                            <span class="decl-text">
+                                <strong>Comprometo-me</strong> a cumprir o Estatuto da Associação, respeitar as decisões da <strong>Assembleia Geral</strong> e da Direção;
+                            </span>
+                        </li>
+                        <li>
+                            <span class="decl-text">
+                                <strong>Comprometo-me</strong> a pagar a quota mensal no valor de <em>50.00 MZN</em> até o dia de cada mês;
+                            </span>
+                        </li>
+                        <li>
+                            <span class="decl-text">
+                                <strong>Comprometo-me</strong> a cumprir as regras de higiene, <em>organização</em> do passeio e convivência pacífica com a comunidade;
+                            </span>
+                        </li>
+                        <li>
+                            <span class="decl-text">
+                                Autorizo o uso dos meus dados e imagem para fins de cadastro e defesa dos interesses dos membros junto às autoridades.
+                            </span>
+                        </li>
+                    </ol>
+                    <div class="checkbox-declare">
+                        <input type="checkbox" id="aceiteDeclaracao" name="aceiteDeclaracao" required>
+                        <label for="aceiteDeclaracao">Li e aceito todos os termos da declaração acima <span class="required">*</span></label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="submit-section">
+                <button type="submit" class="btn-submit" id="btnSubmit">
+                    <i class="fas fa-paper-plane"></i>
+                    Enviar Cadastro
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="success-modal" id="successModal">
+        <div class="modal-content">
+            <div class="modal-icon">
+                <i class="fas fa-check"></i>
+            </div>
+            <h2>Cadastro Enviado!</h2>
+            <p>Obrigado por se candidatar à AJOV. Analisaremos sua inscrição e entraremos em contacto em breve.</p>
+            <button class="btn-close" onclick="closeModal()">Fechar</button>
+        </div>
+    </div>
+
+    <script src="js/app.js" defer></script>
+</body>
+</html>
